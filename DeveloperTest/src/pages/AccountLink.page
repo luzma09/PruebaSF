@@ -7,7 +7,8 @@
 		<apex:form>
 			<apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
 				<apex:column>
-					<!--  
+					<!--
+					another comment  
 					Al hacer click aparece el detalle en la parte de abajo
 					<apex:commandLink rerender="detail">
 						{!contact.Name}
