@@ -1,0 +1,40 @@
+<apex:page standardController="Account" showHeader="true" tabStyle="account" >
+<!--  you can use this page to override the detail view for all accounts -->
+<!-- From Setup, click Customize > Accounts > Buttons, Links, and Actions. -->
+<!-- Click Edit next to View. For Override With select Visualforce Page. -->
+	<style>
+		.activeTab {
+			background-color: #236FBD; 
+			color:white;
+			background-image:none}
+		.inactiveTab { 
+			background-color: lightgrey; 
+			color:black;
+			background-image:none}
+	</style>
+	<!-- 
+	<apex:tabPanel> is used to generate the tabs
+	tabClass attribute: specifies the style class used to display a tab when it is active.
+	inactiveTabClass attribute: specifies the style class used to display a tab when it is inactive
+	Within the definition of the tab panel, is the definition of each child tab component, <apex:tab>.
+	The first tab displays the detail view for the page
+	The rest of the tabs use the <apex:relatedList> to specify the different parts of the account page.
+	 -->
+	<apex:tabPanel switchType="client" selectedTab="tabdetails" id="AccountTabPanel" tabClass='activeTab' inactiveTabClass='inactiveTab'>
+		<apex:tab label="Details" name="AccDetails" id="tabdetails">
+			<apex:detail relatedList="false" title="true" inlineEdit="true"/>
+		</apex:tab>
+		<apex:tab label="Contacts" name="Contacts" id="tabContact">
+			<apex:relatedList subject="{!account}" list="contacts" />
+		</apex:tab>
+		<apex:tab label="Opportunities" name="Opportunities" id="tabOpp">
+			<apex:relatedList subject="{!account}" list="opportunities" />
+		</apex:tab>
+		<apex:tab label="Open Activities" name="OpenActivities" id="tabOpenAct">
+			<apex:relatedList subject="{!account}" list="OpenActivities" />
+		</apex:tab>
+		<apex:tab label="Notes and Attachments" name="NotesAndAttachments" id="tabNoteAtt">
+			<apex:relatedList subject="{!account}" list="CombinedAttachments" />
+		</apex:tab>
+	</apex:tabPanel>
+</apex:page>

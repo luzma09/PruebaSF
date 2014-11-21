@@ -1,0 +1,15 @@
+<apex:page controller="retrieveAsignacion" tabStyle="Asignacion__c">
+    <apex:pageBlock >
+        {!ContactAsignacion}'s Asignaciones
+        <apex:form>
+	        <apex:pageBlockTable value="{!Asignaciones}" var="a">     
+	            <apex:column value="{!a.id}"/>
+		            <apex:column >
+		            	<apex:inputField value="{!a.Valor__c}">
+		            	</apex:inputField>
+		            </apex:column>
+		    </apex:pageBlockTable>
+	        <apex:commandButton action="{!save}" value="Save The Value"/>
+        </apex:form>
+    </apex:pageBlock>
+</apex:page> 

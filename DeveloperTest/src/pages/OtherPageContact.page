@@ -1,0 +1,26 @@
+<apex:page standardController="Contact">
+	<apex:form>
+		<apex:pageBlock title="Quick Edit: {!Contact.Name}">
+			<apex:pageBlockSection title="Contact Details" columns="1">
+				<!-- 
+				When used inside of a <apex:pageBlockSection> component, Visualforce input components and some output components
+				automatically display a form label for the field. To override the default value, and for components that aren’t mapped directly to object fields, 
+				you can set the label using the label attribute of the component.
+				 -->
+				<apex:inputField value="{!Contact.Phone}" label="Telefono"/>
+				<apex:outputField value="{!Contact.MobilePhone}" label="Mobile #">
+					<apex:inlineEditSupport event="ondblClick"/>
+				</apex:outputField>
+				<apex:inputText value="{!Contact.Email}" label="{!Contact.FirstName + '’s Email'}" tabIndex="1"/>
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<!-- 
+				When you save a page, the value attribute of all input components is validated to ensure it’s a single expression, 
+				with no literal text or white space, and is a valid reference to a single controller method or object property. 
+				An error will prevent saving the page
+				 -->
+				<apex:commandButton action="{!save}" value="Save"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

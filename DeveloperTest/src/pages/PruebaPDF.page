@@ -1,0 +1,27 @@
+<apex:page standardController="Account" extensions="EnviarEmail" cache="true" renderAs="pdf" action="{!sendingEmail}">
+  <head>
+  
+  </head>
+  <body style = "margin-top: 4cm; 
+            margin-left: 2cm; 
+            margin-right: 1.5cm; 
+            font-size: 13.5pt; 
+            font-family: Arial;">
+   
+	  CERTIFICA A <br></br> <br></br> <br></br>  
+	  <p>
+		  Que {!Account.name}, con numero de identificacion {!Account.Numero_identificacion__c}, es cliente activo de 
+		  Credicorp Capital Colombia S.A. desde el dia {!DAY(Account.Fecha_de_vinculacion__c)} del mes 
+		  {!MONTH(Account.Fecha_de_vinculacion__c)} del anio {!YEAR(Account.Fecha_de_vinculacion__c)}, y su comportamiento como cliente ha 
+		  sido acorde a las politicas de la Compana. <br></br> <br></br> <br></br> <br></br> <br></br>
+	  </p>
+	  
+	  La presente se expide el dia {!DAY(today())} del mes {!MONTH(today())} del anio {!YEAR(today())}<br></br> <br></br> <br></br> <br></br> <br></br>
+	    
+	  Cordialmente, <br></br> <br></br> <br></br> <br></br>
+	
+	  SERVICIO AL CLIENTE
+      
+  </body>
+  
+</apex:page>

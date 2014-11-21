@@ -1,0 +1,19 @@
+<apex:page controller="OppsController">
+	<!-- 
+	To capture input from a user, use the <apex:form> tag with one or more input components (<apex:inputField>, ) and a <apex:commandLink> or <apex:commandButton>
+	tag to submit the form.
+	If you use an <apex:inputField> tag to display a picklist field, a drop-down list displays instead
+	 -->
+	<apex:form>
+		<apex:dataTable value="{!OpportunitiesWithIndex}" var="oppWrapped">
+			<apex:column>
+				<apex:facet name="header">Opportunity</apex:facet>
+				<apex:outputField value="{!oppWrapped.opp.name}"/>
+			</apex:column>
+			<apex:column>
+				<apex:facet name="header">Amount</apex:facet>
+				<apex:inputText value="{!oppWrapped.opp.amount}" tabindex="{!oppWrapped.tabIndex}"/>
+			</apex:column>
+		</apex:dataTable>
+	</apex:form>
+</apex:page>

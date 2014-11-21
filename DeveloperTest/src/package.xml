@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ConvertingPageToPDF</members>
+        <members>OppsController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AccountLink</members>
+        <members>AccountTableData</members>
+        <members>ConvertingPageToPDF</members>
+        <members>DependentPickLists</members>
+        <members>MyPage</members>
+        <members>OtherPageContact</members>
+        <members>QuickStart</members>
+        <members>RelatedListTest</members>
+        <members>TabIndexOps</members>
+        <members>TableInLineEditing</members>
+        <members>tabbedAccount</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>PruebaEliminar</members>
+        <name>ApexTrigger</name>
+    </types>
+    <version>31.0</version>
+</Package>

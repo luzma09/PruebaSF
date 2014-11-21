@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="DetalleCertificacion_ctr">
+	<head>
+	</head>
+	<body>
+		<apex:form ><br/><br/>
+		<apex:commandButton value="Send Email" action="{!sendME}"/>
+		<p style="font-family: Arial;font-size:7px; text-align:center; background-image: url({!$Resource.FirmaPDF}); background-position: Left;">
+			CREDICORP CAPITAL COLOMBIA S.A. Nit.860.068.182-5. Sociedad Comisionista de Bolsa. Miembro de la Bolsa de Valores de Colombia<br></br>
+		</p>
+		<hr style="color: #FFA500;" />
+		<p style="font-family: Arial;font-size:7px; text-align:center;">
+			BOGOTA D.C. Calle 34 No. 6-65, Tel?fonos (57-1): 3394400, Fax: (57-1)3384476 <br></br>
+			MEDELL?N. Carrera 43 A No. 1Sur-100 Piso 12, Tel?fono (57-4): 310 6300, Fax: (57-4) 3106300 Ext. 121<br></br>
+			CALI. Calle 22 Norte No. 6AN-24 Oficina 202, Tel?fono (57-2): 685 6300, Fax: (57-2) 6829090<br></br>
+			BARRANQUILLA. Carrera 51 No. 79-34 Local 107. Tel?fono (57-5) 3583092, Fax: (57-5) 3583092<br></br>
+			WEB: <a href="www.credicorpcapital.com">www.credicorpcapital.com</a> ? E-mail: servicioalcliente@correval.com
+		</p> 
+	</apex:form>
+	</body>
+</apex:page>

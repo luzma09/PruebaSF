@@ -1,0 +1,46 @@
+<apex:page standardController="Account">
+	<apex:pageBlock title="Hello {!$User.FirstName}!">
+		You are viewing the {!account.name} account.
+	</apex:pageBlock>
+	<apex:form>
+		<apex:pageBlock title="Opportunities">
+			<apex:pageMessages />
+			<apex:pageBlockButtons>
+				<apex:commandButton value="Save" action="{!save}"/>
+			</apex:pageBlockButtons>
+			<!-- 
+			Lista relacionada Oportunidades
+			<apex:pageBlockTable> or <apex:dataTable>, allow you to display information
+			from multiple records at a time by iterating over a collection of records.
+			For this page to display account data, the ID of a valid account record must be specified as a query parameter
+			in the URL for the page
+			-->
+			<apex:pageBlockTable value="{!account.Opportunities}" var="oportunity">
+				<apex:column>
+					<apex:inputField value="{!oportunity.Name}"/>
+				</apex:column>
+				<apex:column value="{!oportunity.CloseDate}"/>
+				<apex:column >
+					<apex:inputField value="{!oportunity.StageName}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+	<!-- 
+	You can reference query string parameters in Visualforce markup by using the $CurrentPage global variable
+	you can access the query string parameters for the page by specifying the parameters attribute after which you can access each
+	individual parameter:
+	$CurrentPage.parameters.parameter_name
+	 -->
+	 <!-- 
+	 Create a link with paremeters
+	 -->
+	<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+	<apex:outputLink value="http://google.com/search">
+		Search Google
+		<apex:param name="q" value="{!account.name}"/>
+	</apex:outputLink>
+	<apex:outputLink value="http://google.com/search?q={!account.name}">
+		Search Google
+	</apex:outputLink>
+</apex:page>

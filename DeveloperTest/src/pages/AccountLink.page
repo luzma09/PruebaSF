@@ -1,0 +1,44 @@
+<apex:page standardController="Account">
+	<apex:pageBlock title="Hello {!$User.FirstName}!">
+		You are displaying contacts from the {!account.name} account.
+		Click a contact's name to view his or her details.
+	</apex:pageBlock>
+	<apex:pageBlock title="Contacts">
+		<apex:form>
+			<apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
+				<apex:column>
+					<!--  
+					Al hacer click aparece el detalle en la parte de abajo
+					<apex:commandLink rerender="detail">
+						{!contact.Name}
+						<apex:param name="cid" value="{!contact.id}"/>
+					</apex:commandLink>
+					-->
+					<!--  defines the area over in which we want the specialized behavior -->
+					<apex:outputPanel>
+						<!-- 
+						defines the partial page update behavior that was implemented previously by the command link 
+						The event attribute specifies the DOM event that should trigger the update - onclick, ondblclick, onmouseover
+						The reRender attribute specifies which part of the page should refresh.
+						The param tag sets the value of the cid query string parameter when the specified event occurs
+						-->
+						<apex:actionSupport event="onmouseover" rerender="detail">
+							<apex:param name="cid" value="{!contact.id}"/>
+						</apex:actionSupport>
+						{!contact.Name}
+					</apex:outputPanel>
+				</apex:column>
+			</apex:dataTable>
+		</apex:form>
+	</apex:pageBlock>
+	<apex:pageBlock mode="edit">
+		<apex:outputPanel id="detail">
+			<!-- Providing Status for Asynchronous Operations -->
+			<apex:actionStatus startText="Requesting...">
+				<apex:facet name="stop">
+					<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+				</apex:facet>
+			</apex:actionStatus>
+		</apex:outputPanel>
+	</apex:pageBlock>
+</apex:page>
