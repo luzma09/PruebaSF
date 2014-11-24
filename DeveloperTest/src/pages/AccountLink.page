@@ -4,6 +4,7 @@
 		Click a contact's name to view his or her details.
 		otra cosa para comentar
 		comentario para probar branch
+		todo no es mas que otra prueba lm1
 	</apex:pageBlock>
 	<apex:pageBlock title="Contacts">
 		<apex:form>
