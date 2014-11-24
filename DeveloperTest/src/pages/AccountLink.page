@@ -6,6 +6,7 @@
 		otro comentario para la rama lm2
 		comentario para probar branch
 		pkjasdhnfkjahdsñfkjsh
+		otra nueva linea en lm2
 	</apex:pageBlock> 
 	<apex:pageBlock title="Contacts">
 		<apex:form>
