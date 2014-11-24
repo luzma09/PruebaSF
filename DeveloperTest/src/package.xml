@@ -10,6 +10,7 @@
         <members>AccountTableData</members>
         <members>ConvertingPageToPDF</members>
         <members>DependentPickLists</members>
+        <members>GITTest</members>
         <members>MyPage</members>
         <members>OtherPageContact</members>
         <members>QuickStart</members>
