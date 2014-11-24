@@ -5,8 +5,7 @@
 		otra cosa para comentar
 		otro comentario para la rama lm2
 		comentario para probar branch
-
-	</apex:pageBlock>
+	</apex:pageBlock> 
 	<apex:pageBlock title="Contacts">
 		<apex:form>
 			<apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
