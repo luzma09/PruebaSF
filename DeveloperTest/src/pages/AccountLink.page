@@ -10,6 +10,8 @@
 	***********
 	another one
 	comment lm1
+	comment lm2
+
 	</apex:pageBlock> 
 	<apex:pageBlock title="Contacts">
 		<apex:form>
