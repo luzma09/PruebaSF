@@ -1,4 +1,4 @@
-<apex:page standardController="Account">
+﻿<apex:page standardController="Account">
 	<apex:pageBlock title="Hello {!$User.FirstName}!">
 		You are displaying contacts from the {!account.name} account.
 		Click a contact's name to view his or her details.
@@ -7,6 +7,7 @@
 		comentario para probar branch
         pkjasdhnfkjahdsñfkjsh
 		otra nueva linea en lm2
+	***********
 	</apex:pageBlock> 
 	<apex:pageBlock title="Contacts">
 		<apex:form>
