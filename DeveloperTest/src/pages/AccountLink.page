@@ -9,6 +9,7 @@
 		otra nueva linea en lm2
 	***********
 	another one
+	linea adicional lm3
 	</apex:pageBlock> 
 	<apex:pageBlock title="Contacts">
 		<apex:form>
